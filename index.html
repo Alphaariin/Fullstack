@@ -1,34 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Simple 3D Flip Card</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="./images/favicon.png" />
+  <meta name="description" content="We're launching something awesome. Stay tuned!" />
 </head>
 <body>
-  <main style="min-height:100vh;display:grid;place-items:center;padding:2rem;">
-    <article class="flip-card" aria-label="Profile card">
-      <div class="flip-inner">
-        
-        <!-- FRONT -->
-        <div class="flip-front">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&fit=crop&w=600&h=400&q=80" 
-               alt="Technology background image" />
-          <h3>Arindrajit Maity</h3>
-          <p>Student</p>
-        </div>
+  <main class="wrapper">
+    <section class="card" role="region" aria-labelledby="headline">
+      <img class="logo" src="./images/logo.svg" alt="" onerror="this.style.display='none'">
 
-        <!-- BACK -->
-        <div class="flip-back">
-          <h3>About Arindrajit</h3>
-          <p>A dedicated learner passionate about design, technology, and creative projects.</p>
-          <a class="btn" href="#contact">Learn More</a>
-        </div>
+      <h1 id="headline">We’re Launching Soon</h1>
+      <p class="subtext">
+        Our website is under construction. We’ll be live in
+        <span class="sr-only">countdown timer below</span>
+      </p>
 
+      <div class="countdown" aria-live="polite" aria-label="Countdown timer">
+        <div class="time-segment">
+          <div class="num" id="days">--</div>
+          <div class="label">Days</div>
+        </div>
+        <div class="time-segment">
+          <div class="num" id="hours">--</div>
+          <div class="label">Hours</div>
+        </div>
+        <div class="time-segment">
+          <div class="num" id="minutes">--</div>
+          <div class="label">Minutes</div>
+        </div>
+        <div class="time-segment">
+          <div class="num" id="seconds">--</div>
+          <div class="label">Seconds</div>
+        </div>
       </div>
-    </article>
+
+      <p id="liveMessage" class="live-message" hidden>🎉 We’re live!</p>
+
+      <!-- Optional email capture (no backend) -->
+      <!--
+      <form class="email-form" onsubmit="event.preventDefault(); alert('Thanks! We\'ll notify you.'); this.reset();">
+        <input type="email" name="email" placeholder="Enter your email" aria-label="Email address" required>
+        <button type="submit">Notify Me</button>
+      </form>
+      -->
+
+      <footer class="footer">
+        © <span id="year"></span> Your Brand. All rights reserved.
+      </footer>
+    </section>
   </main>
+
+  <noscript>
+    <div class="noscript">This page needs JavaScript to show the live countdown.</div>
+  </noscript>
+
+  <script src="./script.js"></script>
 </body>
 </html>
